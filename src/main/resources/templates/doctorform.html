@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en",  xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Apply here to become a doctor!</h1>
+    <form th:action="@{/doctors/doctor}" method="post" th:object="${doctor}">
+        <input type="hidden" th:field="*{id}"/>
+        <p th:if="*{id != null}" th:text="'Id: ' + *{id}">Id:</p>
+        <p>Name: <input type="text" th:field="*{name}"/></p>
+        <p>Surname: <input type="text" th:field="*{surname}"/></p>
+        <p>Specialization: <input type="text" th:field="*{spec}"/></p>
+        <p>Region: <input type="text" th:field="*{region}"/></p>
+        <p> <input type="submit" th:value="${doctor.id != null ? 'Update' : 'Add'}"/> </p>
+    </form>
+</body>
+</html>

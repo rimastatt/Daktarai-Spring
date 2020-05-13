@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en", xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Daktaro apzvalga</title>
+</head>
+<body>
+    <p th:text="${doctor.name}"></p>
+    <p th:text="${doctor.surname}"></p>
+    <p th:text="${doctor.spec}"></p>
+    <p th:text="${doctor.region}"></p>
+    <p> <a th:href="@{/doctors/doctor/{id} (id = ${doctor.id})}">Update Info</a></p>
+    <p> <a th:href="@{/doctors/doctor/{id}/delete (id = ${doctor.id})}">Get Fired!</a></p>
+</body>
+</html>

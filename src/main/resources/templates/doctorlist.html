@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Spec</td>
+                <td>Region</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each = "doctor : ${doctors}">
+                <td th:text="${doctor.name}"></td>
+                <td th:text="${doctor.surname}"></td>
+                <td th:text="${doctor.spec}"></td>
+                <td th:text="${doctor.region}"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/doctors/doctor}">Insert New Doctor</a>
+</body>
+</html>
